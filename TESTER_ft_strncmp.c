@@ -24,5 +24,11 @@ int	T_ft_strncmp(void)
 		return (3);
 	if (ft_strncmp("aac", "aaa", 0) != strncmp("aac", "aaa", 0))
 		return (4);
+	if (ft_strncmp("aac", "aaa", 6) != strncmp("aac", "aaa", 6))
+		return (5);
+	if (ft_strncmp("aaa", "aaa", 6) != strncmp("aaa", "aaa", 6))
+		return (6);
+	if (ft_strncmp("aaa\200b", "aaa\0", 6) != strncmp("aaa\200b", "aaa\0", 6))
+		return (7);
 	return (0);
 }
