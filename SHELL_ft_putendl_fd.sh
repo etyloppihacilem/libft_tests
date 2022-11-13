@@ -13,7 +13,7 @@ test_repo=$repo"test_gen/"								# defines the test repo (something with test_g
 # Do stuff here
 
 
-if [ 1 ]; then
+if [ -f $test_repo"TEMP_out.txt" ] && [[ "coucou je suis heureux$" == $(cat -te $test_repo"TEMP_out.txt") ]]; then
 	echo -e $vrai				# the test passes
 else
 	echo -e $faux				# the test doesnt
