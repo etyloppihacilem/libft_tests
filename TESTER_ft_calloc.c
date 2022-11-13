@@ -19,19 +19,33 @@ void *ft_calloc(unsigned int nmemb, unsigned int size);
 int	T_ft_calloc(void)
 {
 	//1
-	void	*a = calloc(3, 3);
+	char	*a = ft_calloc(3, 3);
 	char	b[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+	char	*c;
+	char	*d;
+	c = malloc(100000);
+	memset(c, '1', 100);
+	free(c);
 	if (memcmp(a, b, 9) != 0)
 		return (1);
 	//2
-	if (ft_calloc(2147483648, 2147483648) != NULL)
-	{
+	c = ft_calloc(2147483648, 2147483648);
+	if (c != NULL)
 		return (2);
-	}
 	//3
-	if (malloc_usable_size(a) != malloc_usable_size(malloc(9)))
-	{
+	free(c);
+	c = ft_calloc(30, 1);
+	d = calloc(30, 1);
+	if (memcmp(c, d, 30) != 0)
 		return (3);
+	free(c);
+	//4
+	c = malloc(9);
+	if (malloc_usable_size(a) != malloc_usable_size(c))
+	{
+		return (4);
 	}
+	free(a);
+	free(c);
 	return (0);
 }
