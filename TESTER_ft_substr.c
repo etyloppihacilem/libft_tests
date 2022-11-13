@@ -26,5 +26,9 @@ int	T_ft_substr(void)
 		return (4);
 	if (memcmp("", ft_substr("coucou je suis heureux", 100, 1), 1) != 0)
 		return (5);
+	if (memcmp("", ft_substr("coucou je suis heureux", 0, 0), 1) != 0)
+		return (6);
+	if (memcmp("", ft_substr("coucou je suis heureux", 20, 0), 1) != 0)
+		return (6);
 	return (0);
 }
