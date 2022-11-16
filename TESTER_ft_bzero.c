@@ -23,7 +23,6 @@ int	T_ft_bzero(void)
 	memset(a, 'h', 100);
 	memset(b, 'h', 100);
 	ft_bzero(a, 0);
-	bzero(b, 0);
 	if (memcmp(a, b, 100) != 0)
 		return (1);
 	//2
