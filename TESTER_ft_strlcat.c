@@ -28,8 +28,8 @@ int	T_ft_strlcat(void)
 		return (1);
 	//i = strlcat(a, b, 15);
 	i = ft_strlcat(c, b, 15);
-	printf("%d\n",i);
-	if (memcmp(c, "coucoujesuis h", 16) != 0 || i != 20)
+	//printf("%d\n",i);
+	if (memcmp(c, "coucoujesuis h", 15) != 0 || i != 20)
 		return (2);
 	i = ft_strlcat(c, b, 0);
 	//j = strlcat(c, b, 0);
@@ -53,7 +53,7 @@ int	T_ft_strlcat(void)
 	char cc[17] = "coucou";
 	//i = strlcat(aa, "lorem ipsum dolor sit amet", 5);
 	i = ft_strlcat(cc, "lorem ipsum dolor sit amet", 5);
-	printf("\tATTENTION : strlcat n'est pas censé réecrire le \\0 de dest si size > strlen(dest),\n\tmais aucun moyen ne permet pour le moment de le verifier \n");
+	printf("\t\033[1;31m WARN \033[0m : strlcat n'est pas censé réecrire le \\0 de dest si size > strlen(dest),\n\tmais aucun moyen ne permet pour le moment de le verifier \n");
 	if (memcmp(aa, cc, 7) != 0 || i != 31)
 		return (6);
 	return (0);
