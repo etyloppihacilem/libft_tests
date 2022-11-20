@@ -5,7 +5,7 @@ Generated with the test_generator utility
 
 // Write your dependencies after the :
 // do not uncomment
-//DEPENDENCIES:
+//DEPENDENCIES: libft.a
 
 #include <stdio.h> // do not remove please
 #include <stdlib.h>
@@ -24,10 +24,10 @@ int	T_ft_split(void)
 	splited = ft_split("         coucou je suis heureux      ", ' ');
 	char	**tofree = splited;
 	int	i=-1;
-	while (i++ < 4)
+	while (++i < 4)
 	{
 		if (memcmp(res[i], splited[i], strlen(res[i])) != 0)
-			return (1);
+			return (10 + i);
 		free(splited[i]);
 	}
 	free(tofree);
@@ -39,5 +39,7 @@ int	T_ft_split(void)
 	free(splited);
 	if (*ft_split("", '-') != 0)
 		return (3);
+	if (ft_split(NULL, '-') != 0)
+		return (4);
 	return (0);
 }

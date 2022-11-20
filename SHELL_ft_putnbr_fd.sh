@@ -13,9 +13,9 @@ test_repo=$repo"test_gen/"								# defines the test repo (something with test_g
 # Do stuff here
 
 
-if [ -f $test_repo"TEMP_out.txt" ] && [[ "42_-42" == $(cat -te $test_repo"TEMP_out.txt") ]]; then
+if [ -f $test_repo"TEMP_out.txt" ] && [[ "42_-42_2147483647_-2147483648" == $(cat -te $test_repo"TEMP_out.txt") ]]; then
 	echo -e $vrai				# the test passes
 else
-	echo -e $faux				# the test doesnt
+	echo -e $faux " ($(cat -te $test_repo"TEMP_out.txt"))"				# the test doesnt
 fi
 
