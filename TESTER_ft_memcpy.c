@@ -35,5 +35,7 @@ int	T_ft_memcpy(void)
 	memset(b, 'a', 100);
 	if (memcmp(a, b, 2) != 0)
 		return (3);
+	if (ft_memcpy(NULL, NULL, 4) != 0)
+		return (4);
 	return (0);
 }

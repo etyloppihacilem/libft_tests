@@ -26,6 +26,10 @@ int	T_ft_putnbr_fd(void)
 	ft_putnbr_fd(42, f);
 	ft_putstr_fd("_", f);
 	ft_putnbr_fd(-42, f);
+	ft_putstr_fd("_", f);
+	ft_putnbr_fd(2147483647, f);
+	ft_putstr_fd("_", f);
+	ft_putnbr_fd(-2147483648, f);
 	if (close(f) != 0)
 		return (2);
 	return (0);		// the test passes
